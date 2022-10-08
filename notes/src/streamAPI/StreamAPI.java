@@ -1,3 +1,5 @@
+package streamAPI;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -16,6 +18,7 @@ public class StreamAPI {
     static Long getSalarySum(List<Map> list) {
         return list.stream()
                 .mapToLong(employee -> (int) employee.get("Salary"))
+                //хотя тут проще использовать .sum()
                 .reduce(0, Long::sum);
     }
 
